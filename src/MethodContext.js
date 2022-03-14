@@ -12,8 +12,7 @@ export const obj = {
       EventEmitter.on('click', () => {this.count++})
     },
     unsubscribe() {
-      EventEmitter.off('click', () => {this.count++})
-      
+      EventEmitter.off('click', () => {this.count++}) 
     },
 };
 
@@ -26,7 +25,7 @@ obj1.first(1, 2, 3);
 export const obj1 = {
     first(...args) {
         let arr = args.reverse();  
-        this.second(arr);
+        this.second(...arr);
       },
     second() {
         // здесь ничего писать не нужно
