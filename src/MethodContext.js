@@ -9,10 +9,11 @@ import { EventEmitter } from './EventEmitter';
 export const obj = {
     count: 0,
     subscribe() {
-      EventEmitter.on('click', () => {this.count++})
+      this.callback = () => this.count++;
+      EventEmitter.on('click', this.callback);
     },
     unsubscribe() {
-      EventEmitter.off('click', () => {this.count++}) 
+      EventEmitter.off('click', this.callback);
     },
 };
 
